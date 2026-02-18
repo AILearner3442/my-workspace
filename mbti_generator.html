@@ -104,12 +104,12 @@
   /* Main layout */
   .main-grid {
     display: grid;
-    grid-template-columns: 340px 1fr;
+    grid-template-columns: 380px 1fr;
     gap: 24px;
     align-items: start;
   }
 
-  @media (max-width: 780px) {
+  @media (max-width: 850px) {
     .main-grid { grid-template-columns: 1fr; }
     .header h1 { font-size: 1.6rem; }
   }
@@ -563,6 +563,10 @@
           <div class="type-pill" onclick="selectType(this, 1)" data-val="ISFP">ISFP</div>
           <div class="type-pill" onclick="selectType(this, 1)" data-val="ISTJ">ISTJ</div>
           <div class="type-pill" onclick="selectType(this, 1)" data-val="ISTP">ISTP</div>
+          <div class="type-pill" onclick="selectType(this, 1)" data-val="ESFJ">ESFJ</div>
+          <div class="type-pill" onclick="selectType(this, 1)" data-val="ESFP">ESFP</div>
+          <div class="type-pill" onclick="selectType(this, 1)" data-val="ESTJ">ESTJ</div>
+          <div class="type-pill" onclick="selectType(this, 1)" data-val="ESTP">ESTP</div>
         </div>
       </div>
 
@@ -582,6 +586,10 @@
           <div class="type-pill-2" onclick="selectType(this, 2)" data-val="ISFP">ISFP</div>
           <div class="type-pill-2" onclick="selectType(this, 2)" data-val="ISTJ">ISTJ</div>
           <div class="type-pill-2" onclick="selectType(this, 2)" data-val="ISTP">ISTP</div>
+          <div class="type-pill-2" onclick="selectType(this, 2)" data-val="ESFJ">ESFJ</div>
+          <div class="type-pill-2" onclick="selectType(this, 2)" data-val="ESFP">ESFP</div>
+          <div class="type-pill-2" onclick="selectType(this, 2)" data-val="ESTJ">ESTJ</div>
+          <div class="type-pill-2" onclick="selectType(this, 2)" data-val="ESTP">ESTP</div>
         </div>
       </div>
 
@@ -800,7 +808,8 @@ ${angle ? `- 特殊角度/主题：${angle}` : ''}
         headers: {
           'Content-Type': 'application/json',
           'x-api-key': apiKey,
-          'anthropic-version': '2023-06-01'
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-access': 'true'
         },
         body: JSON.stringify({
           model: 'claude-sonnet-4-5-20250929',
